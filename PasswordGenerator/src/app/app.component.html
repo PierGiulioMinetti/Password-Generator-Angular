@@ -1,0 +1,44 @@
+<div class="container">
+
+  <!-- PASSWORD GENERATOR -->
+  <h1>
+    Password Generator
+  </h1>
+  <form action="">
+    <label for="">
+      Choose password length
+    </label>
+    <input (input)="lunghezza($event)" type="text" name="" id="pwdL">
+    <br>
+    <input (change)="checkString()" type="checkbox" name="" id="">
+    <label for="">
+      Use letters
+    </label>
+    <br>
+    <input (change)="checkNumber()" type="checkbox" name="" id="">
+    <label for="">
+      Use numbers
+    </label>
+
+
+    <br>
+    <input (change)="checkSymbol()" type="checkbox" name="" id="">
+    <label for="">
+      Use symbol
+    </label>
+    <br>
+    <br>
+    <input [disabled]=" ! (lunghez && ( checkStr || checkNumb || checkSymb ) )" (click)="generatePassword()"
+      type="button" value="generate!">
+  </form>
+  <p *ngIf="finalPassword">
+    Your password is:
+    <!-- <input id="d" type="text" name="" id="" [value]="finalPassword"> -->
+    <br>
+    <textarea id="d" cols="30" rows="5">{{finalPassword}} </textarea>
+  </p>
+
+
+
+
+</div>
